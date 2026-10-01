@@ -13,6 +13,12 @@ jobs:
           node-version: 22
       - run: npm install
       - run: npm install --save-dev typescript@5.7.3
+      - name: Stage web assets
+  run: |
+    mkdir web
+    cp index.html style.css app.js manifest.webmanifest service-worker.js web/
+    cp -R assets web/assets
+    sed -i "s/webDir: '.',/webDir: 'web',/" capacitor.config.ts
       - run: npx cap add android
       - run: npx cap sync android
       - working-directory: android
