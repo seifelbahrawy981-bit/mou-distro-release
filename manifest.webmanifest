@@ -1,0 +1,14 @@
+{
+  "name": "MOU Distro",
+  "short_name": "MOU Distro",
+  "description": "إدارة المبيعات والتحصيلات والمرتجعات ومديونيات العملاء.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f7f8ff",
+  "theme_color": "#6439d4",
+  "icons": [
+    { "src": "assets/mou-logo-pearl.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#131330" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <title>MOU Distro | إدارة المناديب</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="loginView" class="login-view">
+      <section class="brand-panel">
+        <img src="assets/mou-logo.png" alt="MOU Distro" class="brand-logo" />
+        <p>منصة توزيع ذكية لإدارة المبيعات والتحصيلات</p>
+      </section>
+      <section class="login-panel">
+        <img src="assets/mou-logo-pearl.png" alt="MOU Distro" class="login-brand" />
+        <div class="eyebrow">MOU DISTRO SYSTEM</div>
+        <h1>تسجيل الدخول</h1>
+        <p class="subtext">أدخل بيانات حسابك للوصول إلى لوحة التحكم</p>
+        <form id="loginForm">
+          <label>اسم المستخدم<input id="username" required placeholder="أدخل اسم المستخدم" autocomplete="username" /></label>
+          <label>كلمة المرور<input id="password" type="password" required placeholder="أدخل كلمة المرور" autocomplete="current-password" /></label>
+          <button type="submit">تسجيل الدخول <span>←</span></button>
+          <p id="loginError" class="error" hidden>فضلاً أدخل اسم المستخدم وكلمة المرور.</p>
+        </form>
+        <small>نسخة تجريبية — سيتم ربط المستخدمين بالنظام عند تجهيز البيانات.</small>
+      </section>
+    </main>
+
+    <main id="appView" class="app-view" hidden>
+      <aside class="sidebar">
+        <div class="mini-brand"><img src="assets/mou-logo-pearl.png" alt="MOU" /><span>MOU <b>DISTRO</b></span></div>
+        <nav>
+          <button class="nav-link active" data-page="home">⌂ <span>الرئيسية</span></button>
+          <button class="nav-link" data-page="sales">▣ <span>المبيعات</span></button>
+          <button class="nav-link" data-page="collections">◉ <span>التحصيلات</span></button>
+          <button class="nav-link" data-page="returns">↩ <span>المرتجعات</span></button>
+          <button class="nav-link" data-page="debts">₪ <span>مديونيات العملاء</span></button>
+        </nav>
+        <button id="logout" class="logout">تسجيل الخروج</button>
+      </aside>
+      <section class="workspace">
+        <header>
+          <div class="title-wrap"><p id="today"></p><h2 id="pageTitle">نظرة عامة</h2></div>
+          <div class="header-actions"><span class="live-dot"><i></i> النظام متصل</span><div class="user"><span class="avatar">م</span><div><b id="userName">مندوب تجريبي</b><small>إدارة التوزيع</small></div></div></div>
+        </header>
+        <div id="pageContent"></div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+    <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./service-worker.js');</script>
+  </body>
+</html>

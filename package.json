@@ -1,0 +1,16 @@
+{
+  "name": "mou-distro-app",
+  "private": true,
+  "scripts": {
+    "android:add": "npx cap add android",
+    "android:sync": "npx cap sync android",
+    "android:build": "cd android && gradlew.bat assembleRelease"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/core": "^7.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.0.0"
+  }
+}
